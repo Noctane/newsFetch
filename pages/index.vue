@@ -30,6 +30,11 @@
       </div>
     </div>
     </div>
+    <p class="text-center text-grey">
+      powered by <a href="https://newsapi.org">
+        NewsAPI.org
+      </a>
+    </p>
   </section>
 </template>
 

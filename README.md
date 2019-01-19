@@ -1,6 +1,6 @@
 # news-fetch
 
-> My superior Nuxt.js project
+> A small app that display recent news
 
 ## Build Setup
 
@@ -20,3 +20,12 @@ $ yarn run generate
 ```
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+
+## Setting things up
+
+* Get an API key at [NewsApi](https://newsapi.org)
+* Create a `.env` file and this line with your freshly created API key :
+```
+API_KEY=YOUR_FRESHLY_CREATED_API_KEY
+```
+* You're good to go ;)
