@@ -24,7 +24,7 @@ For detailed explanation on how things work, checkout [Nuxt.js docs](https://nux
 ## Setting things up
 
 * Get an API key at [NewsApi](https://newsapi.org)
-* Create a `.env` file and this line with your freshly created API key :
+* Create a `.env` file at the root of the project and add this line with your freshly created API key :
 ```
 API_KEY=YOUR_FRESHLY_CREATED_API_KEY
 ```
