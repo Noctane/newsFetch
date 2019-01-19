@@ -26,7 +26,6 @@ View the full documentation at https://tailwindcss.com.
 
 // let defaultConfig = require('tailwindcss/defaultConfig')()
 
-
 /*
 |-------------------------------------------------------------------------------
 | Colors                                    https://tailwindcss.com/docs/colors
@@ -42,6 +41,8 @@ View the full documentation at https://tailwindcss.com.
 | "secondary", or even a numeric scale like "100" and "200", go for it.
 |
 */
+
+/* eslint-disable */
 
 let colors = {
   'transparent': 'transparent',

@@ -1,36 +1,57 @@
 <template>
-  <section class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        news-fetch
-      </h1>
-      <h2 class="subtitle">
-        My superior Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >GitHub</a>
+  <section class="container mx-auto p-4">
+    <div class="px-6 py-4">
+      <span v-for="source in sources" :key="source.id" class="inline-block bg-grey-lighter rounded-full mx-1 px-3 py-1 text-sm font-semibold text-grey-darker mr2">
+        {{ source.name }}
+      </span>
+    </div>
+    <div class="flex flex-col w-1/2 mx-auto">
+      <div v-for="(article,index) in articles" :key="index" class="max-w-sm py-4">
+        <div class="rounded overflow-hidden shadow-md">
+          <a v-if="article.urlToImage !== null" :href="article.url" target="_blank">
+            <img :src="article.urlToImage" :alt="article.title">
+          </a>
+          <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-2">
+              <a :href="article.url" target="_blank" class="text-grey-darkest no-underline hover:text-teal">
+                {{ article.title }}
+              </a>
+            </div>
+            <p class="text-grey-darker text-base">
+              {{ article.description }}
+            </p>
+          </div>
+          <div class="px-6 py-4">
+            <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr2">
+              {{ article.source.name }}
+            </span>
+          </div>
+        </div>
       </div>
+    </div>
     </div>
   </section>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+// import Card from '~/components/Card.vue'
 
 export default {
-  components: {
-    Logo
+  async asyncData({ $axios }) {
+    const { articles } = await $axios.$get(
+      `https://newsapi.org/v2/top-headlines?country=fr&apiKey=${
+        process.env.API_KEY
+      }`
+    )
+
+    const { sources } = await $axios.$get(
+      `https://newsapi.org/v2/sources?country=fr&apiKey=${process.env.API_KEY}`
+    )
+    return { articles, sources }
   }
+  // components: {
+  //   Card
+  // }
 }
 </script>
 
@@ -40,7 +61,7 @@ export default {
   @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
-.container {
+.container-nuxt {
   margin: 0 auto;
   min-height: 100vh;
   display: flex;

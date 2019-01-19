@@ -1,0 +1,7 @@
+.nav-wrapper {
+  @apply border-t-4 border-teal border-solid;
+}
+
+.nav-container {
+  @apply flex items-baseline justify-between px-4 py-6 border-grey-lighter border-solid border-b;
+}

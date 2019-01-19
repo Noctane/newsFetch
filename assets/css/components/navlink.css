@@ -1,0 +1,7 @@
+.navlink {
+  @apply px-3 text-grey text-xl no-underline;
+}
+
+.navlink:hover {
+  @apply text-teal;
+}
